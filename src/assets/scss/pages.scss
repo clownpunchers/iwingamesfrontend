@@ -12,7 +12,6 @@ $font_color: #fff;
   background-position: center center;
   background-attachment: fixed;
 
-
   .dot-layers {
     .layer {
       position: fixed;
@@ -36,10 +35,11 @@ $font_color: #fff;
     ul {
       position: fixed;
       height: 100vh;
-      width: 65px;
+      width: 68px;
 
       li {
         padding-bottom: 30px;
+        list-style: none !important;
 
         i {
           font-size: 20px;
@@ -55,7 +55,7 @@ $font_color: #fff;
 
     .left {
       border-right: solid 1px #695872;
-      padding-left: 20px;
+      padding-left: 24px;
       padding-top: 20vh;
 
       .rotate {
@@ -70,12 +70,12 @@ $font_color: #fff;
         width: 6px;
         height: 6px;
         border-radius: 50%;
-        background-color: white;
+        background-color: #fff;
       }
 
       .left-divider {
         width: 1px;
-        border: white solid 1px;
+        border: #fff solid 1px;
         height: 130px;
         margin-left: 10px;
       }
@@ -86,7 +86,6 @@ $font_color: #fff;
       right: 0px;
       padding-top: 30vh;
     }
-
 
     .left li.rotate {
       transform-origin: bottom right;
@@ -113,7 +112,6 @@ $font_color: #fff;
     .topnav-avatar {
       width: 36px;
       height: 36px;
-      flex-shrink: 0;
       margin-left: 11px;
       border-radius: 36px;
       box-shadow: 0px 2px 13px 0px rgba(217, 0, 255, 0.47);
@@ -123,6 +121,23 @@ $font_color: #fff;
       .btn {
         background: transparent !important;
         border: none;
+        color: #fff;
+        text-align: center;
+        font-family: Lato;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: lowercase;
+        span {
+          color: #d900ff;
+          font-family: Lato;
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          text-transform: uppercase;
+        }
 
         &::after {
           content: none !important;
@@ -146,8 +161,8 @@ $font_color: #fff;
 
   main {
     position: relative;
-    margin-left: 75px;
-    margin-right: 75px;
+    margin-left: 90px;
+    margin-right: 90px;
   }
 
   .footer {
@@ -158,19 +173,16 @@ $font_color: #fff;
     img,
     iframe {
       width: 100%;
-      height: 72px
+      height: 72px;
     }
   }
 }
-
-
 
 #auth-page {
   height: 78vh;
   display: flex;
   justify-content: center;
   align-items: center;
-
 
   .auth-form {
     border-radius: 17px;
@@ -183,6 +195,17 @@ $font_color: #fff;
       border-top-right-radius: 17px;
       background: linear-gradient(45deg, #44035b, #340358);
       padding-top: 25px;
+
+      .form-title {
+        color: #fff;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+      }
     }
 
     .divider {
@@ -198,10 +221,15 @@ $font_color: #fff;
       }
 
       .texture {
-        color: $font_color;
-        font-size: 16px;
-        text-transform: uppercase;
+        color: #fff;
+        text-align: center;
+        font-family: Montserrat;
         margin: 0px 10px;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        text-transform: uppercase;
       }
 
       .right {
@@ -214,8 +242,7 @@ $font_color: #fff;
     input {
       background-color: #381e48;
       border: none;
-      height: 38px;
-      color: rgba(255, 255, 255, 0.24);
+      height: 35px;
       font-size: 16px;
       font-weight: 400;
       font-style: normal;
@@ -227,5 +254,227 @@ $font_color: #fff;
     background-color: #1e032e;
     border-bottom-left-radius: 17px;
     border-bottom-right-radius: 17px;
+  }
+}
+
+#profile-page {
+  .tab-btns {
+    width: 100%;
+    padding-top: 5px;
+
+    .btn {
+      border-radius: 0px !important;
+      border: 0px !important;
+      margin-right: 15px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.09);
+      backdrop-filter: blur(8.5px);
+      color: #fff;
+      text-align: center;
+      font-family: "Montserrat";
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      text-transform: uppercase;
+
+      &.active,
+      &:hover {
+        background: #9e19c7;
+        box-shadow: 0px 4px 36px 0px rgba(158, 25, 199, 0.67);
+      }
+    }
+  }
+
+  .ctrl-btns {
+    text-align: right !important;
+    padding-top: 5px;
+
+    .edit-btn {
+      color: #fff;
+      text-align: center;
+      font-family: Lato;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      height: 40px;
+      border-radius: 30px;
+      width: 180px;
+      border: 1px solid #9e19c7;
+      background: var(--fff, linear-gradient(95deg, #d900ff 0%, #8500ff 100%));
+      box-shadow: 0px 4px 36px 0px rgba(158, 25, 199, 0.32);
+    }
+
+    .reset-btn {
+      color: #fff;
+      text-align: center;
+      font-family: Lato;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      width: 130px;
+      height: 40px;
+      border: 1px solid #9e19c7;
+      border-radius: 33px;
+      background: rgba(218, 3, 247, 0.34);
+      box-shadow: 0px 4px 36px 0px rgba(158, 25, 199, 0.32);
+      backdrop-filter: blur(10px);
+      margin-left: 10px;
+    }
+  }
+
+  .profile-form {
+    .form-label {
+      color: #fff;
+      font-family: Lato;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    .form-control {
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.09);
+      backdrop-filter: blur(8.5px);
+      height: 40px;
+    }
+  }
+
+  .profile-table {
+    tr {
+      height: 60px;
+      border-bottom: #753b99 solid 1px;
+      border-style: none !important;
+
+      td {
+        background: rgba(255, 255, 255, 0.09);
+        backdrop-filter: blur(8.5px);
+        padding: 15px 35px;
+        color: #fff;
+        font-family: "Montserrat";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 285.4%;
+
+        label {
+          color: #fff;
+          font-family: "Montserrat";
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 285.4%;
+        }
+      }
+    }
+  }
+
+  .profile-linked {
+    text-align: center;
+
+    h3 {
+      color: #fff;
+      font-family: Montserrat;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 324.9%;
+    }
+
+    .linked-card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 42px;
+      color: #fff;
+      text-align: center;
+      font-family: "Montserrat";
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      text-transform: uppercase;
+    }
+
+    .facebook {
+      background: #007efa;
+      box-shadow: 0px 4px 36px 0px rgba(158, 25, 199, 0.67);
+
+      i {
+        font-size: 24px;
+      }
+    }
+
+    .google {
+      background: rgba(0, 0, 0, 0.19);
+      box-shadow: 0px 4px 36px 0px rgba(158, 25, 199, 0.67);
+      backdrop-filter: blur(8px);
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+#dashboard-page {
+  .copylink_btn {
+    height: 37px;
+    flex-shrink: 0;
+    border-radius: 3px;
+    background: #d900ff;
+    color: #fff;
+    font-family: Lato;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: lowercase;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    span {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+  .sideinfo {
+    border: 1px solid #9e19c7;
+    border-radius: 0px !important;
+    box-shadow: 0px 4px 36px 0px rgba(158, 25, 199, 0.32);
+
+    li {
+      display: flex;
+      align-items: center;
+      height: 45px;
+      color: #fff;
+      font-family: Lato;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      border-radius: 0px !important;
+      border: none;
+      border-bottom: 1px solid rgba(218, 3, 247, 0.16);
+      background: #1d002a;
+      box-shadow: 0px 4px 36px 0px rgba(158, 25, 199, 0.32);
+
+      &:last-child {
+        border-bottom: none;
+      }
+      i {
+        color: #d900ff;
+        margin-right: 10px;
+        font-size: 20px;
+      }
+      span {
+        margin-left: auto;
+      }
+    }
   }
 }

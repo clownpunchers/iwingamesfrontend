@@ -18,12 +18,12 @@ const mapdata = [
   {
     text: "Tournaments",
     link: "/tournament",
-    class: "rounded-btn",
+    class: "topnav-btn",
   },
   {
     text: "Games",
     link: "/practice",
-    class: "rounded-btn",
+    class: "topnav-btn",
   },
   {
     icon: <i className="bi bi-bell"></i>,
@@ -49,12 +49,13 @@ const Topnav = ({ page }) => {
                 {ele.avatar ? (
                   <Dropdown>
                     <Dropdown.Toggle>
-                      {ele.text}{" "}
-                      <span className="color-acitve text-uppercase">
-                        {userInfo.username}
-                      </span>
+                      {ele.text} &nbsp; <span>{userInfo.username}</span>
                       <Image
-                        src={`${API_URL}/images/${userInfo.avatar}`}
+                        src={
+                          userInfo.avatar
+                            ? `${API_URL}/images/${userInfo.avatar}`
+                            : "../assets/img/icons/avatar.png"
+                        }
                         className="topnav-avatar"
                       />
                     </Dropdown.Toggle>
@@ -70,7 +71,7 @@ const Topnav = ({ page }) => {
                   </Nav.Link>
                 ) : ele.stutasBar ? (
                   <Nav.Link as={Link} to={ele.link} className={ele.class}>
-                    <div className="card">
+                    <div className="card rounded-0">
                       <div className="card-body">Some Informations for Tim</div>
                     </div>
                   </Nav.Link>

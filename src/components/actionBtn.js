@@ -6,12 +6,8 @@ import $ from "jquery";
 
 export default function ActionBtn({ id, table, row }) {
   const delRow = (id, table, row) => {
-    Api(
-      `/admin/delRow`,
-      {
-        id,
-        table,
-      },
+    Api('/admin/delRow',
+      { id, table },
       (res) => {
         $(`#${table}-table #row-${row}`).remove();
         Notify("success", "Deleted");

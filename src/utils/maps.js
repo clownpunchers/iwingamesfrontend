@@ -94,4 +94,37 @@ const str_prize = [
   { place: 10, advance: false, prizeType: "", value: "" },
 ];
 
-export { adminSideBarMenu, str_stage, status, str_prize };
+const profile_fields = [
+  {
+    index: "firstname",
+    title: "First Name",
+    type: "text",
+  },
+  {
+    index: "lastname",
+    title: "Last Name",
+    type: "text",
+  },
+  {
+    index: "email",
+    title: "E-mail",
+    type: "email",
+  },
+  {
+    index: "username",
+    title: "Nickname",
+    type: "text",
+  },
+  {
+    index: "phone_num",
+    title: "Phone Number",
+    type: "number",
+  },
+  {
+    index: "address",
+    title: "Address",
+    type: "text",
+  },
+];
+
+export { adminSideBarMenu, str_stage, status, str_prize, profile_fields };

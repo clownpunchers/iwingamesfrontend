@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
-import MenuBar from "../../components/menubar";
-import BottomNav from "../../components/bottomNav";
-import ShowGuide from "../../components/modal";
+import MenuBar from "../../../components/menubar";
+import BottomNav from "../../../components/bottomNav";
+import ShowGuide from "../../../components/modal";
 
 const Playgame = () => {
   const [url, seturl] = useState();
@@ -22,8 +22,8 @@ const Playgame = () => {
           <ShowGuide
             buttonClass="help-btn ms-auto"
             className="help-modal"
-            buttonText="How to play"
-            modalTitle="How to play"
+            buttonText="How to play ?"
+            modalTitle="How to play ?"
             modalBody="some contents here..."
             closeButtonLabel="Close"
             understoodButtonLabel="Got it!"
@@ -31,7 +31,7 @@ const Playgame = () => {
         </div>
       </Row>
       <Row>
-        <Col md={9} className="px-1">
+        <Col md={9} className="">
           <iframe
             className="w-100 h-100"
             title="gamer"
@@ -42,7 +42,7 @@ const Playgame = () => {
             src={url}
           />
         </Col>
-        <Col md={3} className="px-1">
+        <Col md={3} className="">
           <MenuBar />
         </Col>
       </Row>

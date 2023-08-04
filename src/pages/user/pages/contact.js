@@ -1,8 +1,8 @@
 import React from "react";
 import { Form, InputGroup } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { Api } from "../../utils/api";
-import { Notify } from "../../utils/notification";
+import { Api } from "../../../utils/api";
+import { Notify } from "../../../utils/notification";
 
 function Contact() {
   const { register, handleSubmit } = useForm();
@@ -53,12 +53,12 @@ function Contact() {
             </InputGroup>
 
             <textarea
-              className="mt-3"
+              className="mt-3 w-100"
               rows={5}
               placeholder="Write subscribe"
               {...register("context", { required: true })}
             />
-            <button className="rounded-btn mt-3" type="submit">
+            <button className="topnav-btn mt-3" type="submit">
               Submit Now
             </button>
           </div>

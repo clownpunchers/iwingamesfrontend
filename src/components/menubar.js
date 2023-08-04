@@ -42,7 +42,7 @@ const data = [
 
 export default function MenuBar() {
   return (
-    <div className="menubar">
+    <div className="menubar mb-1">
       <video style={{ width: "100%", height: "30vh" }} controls autoPlay>
         <source src="../assets/movie.mp4" type="video/mp4" />
       </video>
@@ -56,6 +56,7 @@ export default function MenuBar() {
                   alt="avatar"
                   width={50}
                   height={50}
+                  className="rounded-circle"
                 />
                 <small style={{ fontSize: "10px" }}>Active</small>
               </Col>

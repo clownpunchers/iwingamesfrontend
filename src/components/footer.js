@@ -16,7 +16,7 @@ function Footer() {
 
   return (
     <div className="footer">
-      <Row className="px-0">
+      <Row className="">
         <Col>
           <iframe
             src={adUrl}

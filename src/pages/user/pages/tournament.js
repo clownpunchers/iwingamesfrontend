@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
-import { Api } from "../../utils/api";
+import { Api } from "../../../utils/api";
 
-import Pagenav from "../../components/filterNav";
-import BottomNav from "../../components/bottomNav";
-import MenuBar from "../../components/menubar";
-import PaginatedItems from "../../components/paginate";
-import ShowGuide from "../../components/modal";
+import Pagenav from "../../../components/filterNav";
+import BottomNav from "../../../components/bottomNav";
+import MenuBar from "../../../components/menubar";
+import PaginatedItems from "../../../components/paginate";
+import PageTitle from "../../../components/pageTitle";
 
 const Tournament = () => {
   const [loading, setLoading] = useState(true);
@@ -36,24 +36,11 @@ const Tournament = () => {
 
   return (
     <>
+      <PageTitle title={"Tournament"} guide={true} />
       <Row>
-        <div className="d-flex mt-1">
-          <h5 className="page-title">Tournaments</h5>
-          <ShowGuide
-            buttonClass="help-btn ms-auto"
-            className="help-modal"
-            buttonText="How to play"
-            modalTitle="How to play"
-            modalBody="some contents here..."
-            closeButtonLabel="Close"
-            understoodButtonLabel="Got it!"
-          />
-        </div>
-      </Row>
-      <Row>
-        <Col lg={9}>
+        <Col md={9} sm={12}>
           <Pagenav setType={setType} />
-          <Row className="mt-2 game-list">
+          <Row className="game-list">
             {loading ? (
               <h6 className="mt-2">Loading...</h6>
             ) : tours.length === 0 ? (
@@ -63,7 +50,7 @@ const Tournament = () => {
             )}
           </Row>
         </Col>
-        <Col md={3} className="px-1">
+        <Col md={3} sm={12}>
           <MenuBar />
         </Col>
       </Row>

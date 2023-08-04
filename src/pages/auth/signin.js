@@ -16,6 +16,7 @@ export default function Signin() {
 
   const onSubmit = (data) => {
     Api("/auth/login", data, (res) => {
+      console.log(data)
       const { success, accessToken } = res;
       if (success) {
         localStorage.setItem("iwin-token", accessToken);
@@ -28,14 +29,17 @@ export default function Signin() {
 
   const gLogin = useGoogleLogin({
     onSuccess: async (user) => {
-      Api("/auth/google-login", { access_token: user.access_token }, (res) => {
-        const { success } = res;
-        if (success) {
-          navigate("/practice");
-        } else {
-          navigate("/signup");
+      Api("/auth/google-login",
+        { access_token: user.access_token },
+        (res) => {
+          const { success } = res;
+          if (success) {
+            navigate("/practice");
+          } else {
+            navigate("/signup");
+          }
         }
-      });
+      );
     },
   });
   return (
@@ -46,7 +50,7 @@ export default function Signin() {
           className="text-center auth-form"
         >
           <div className="form-header">
-            <h4 className="form-title">Log in with </h4>
+            <h4 className="form-title">Log in with</h4>
           </div>
           <div className="form-body">
             <Row className="pb-3 pt-3">
@@ -65,7 +69,7 @@ export default function Signin() {
               <input
                 className="mt-2"
                 type="text"
-                placeholder="Enter your Email or Username"
+                placeholder="Enter Email"
                 {...register("username", { required: true })}
               />
               <input
@@ -75,7 +79,7 @@ export default function Signin() {
                 {...register("password", { required: true })}
               />
               <Button
-                className="rounded-btn mt-3"
+                className="topnav-btn mt-3"
                 variant="danger"
                 type="submit"
               >

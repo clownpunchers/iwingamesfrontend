@@ -26,7 +26,7 @@ function PaginatedItems({ items }) {
   return (
     <>
       {currentItems.map((ele, i) => (
-        <Col md={3} key={i} className="mb-2 px-0">
+        <Col md={3} key={i} className="mb-3 px-0">
           <div className="thumbnail">
             <Image
               src={`${API_URL}/images/${ele.image}`}
@@ -48,7 +48,7 @@ function PaginatedItems({ items }) {
                 navigator("/gameplay");
               }}
             >
-              {ele.name}
+              {ele.name || ele.title}
             </Button>
             <div className="tip">{ele.summary}</div>
           </div>

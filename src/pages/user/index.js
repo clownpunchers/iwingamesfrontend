@@ -10,18 +10,18 @@ import Sidebar from "../../components/linksBar.js";
 import Footer from "../../components/footer";
 import Layer from "../../components/layer.js";
 
-import Dashboard from "./dashboard";
-import Practice from "./practice";
-import Tournament from "./tournament";
-import Profile from "./profile";
-import Playgame from "./playgame";
-import Aboutus from "./aboutus";
-import Contact from "./contact";
+import Dashboard from "./pages/dashboard";
+import Practice from "./pages/practice";
+import Tournament from "./pages/tournament";
+import Profile from "./pages/profile";
+import Playgame from "./pages/playgame";
+import Aboutus from "./pages/aboutus";
+import Contact from "./pages/contact";
 
 const User = ({ page }) => {
   const naviagor = useNavigate();
   const [userInfo, setUserInfo] = useState({});
-  
+
   useEffect(() => {
     getAuthenticatedUser((res) => {
       const { authenticated, user } = res;

@@ -34,10 +34,10 @@ export default function Modals({
         </Modal.Header>
         <Modal.Body>{modalBody}</Modal.Body>
         <Modal.Footer>
-          <Button variant="daner" className="rounded-btn" onClick={handleClose}>
+          <Button variant="daner" className="topnav-btn" onClick={handleClose}>
             {closeButtonLabel}
           </Button>
-          <Button variant="danger" className="rounded-btn">
+          <Button variant="danger" className="topnav-btn">
             {understoodButtonLabel}
           </Button>
         </Modal.Footer>

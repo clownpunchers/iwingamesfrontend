@@ -21,9 +21,12 @@ const months = [
   "December",
 ];
 const days = Array.from({ length: 31 }, (_, index) => index + 1);
+const thisYear = new Date().getFullYear();
+const minYear = thisYear - 80;
+const maxYear = thisYear - 18;
 const years = Array.from(
-  { length: 100 },
-  (_, index) => index + (new Date().getFullYear() - 18) - 70
+  { length: maxYear - minYear + 1 },
+  (_, index) => maxYear - index
 );
 
 export default function Signup({ invitedBy }) {
@@ -32,6 +35,7 @@ export default function Signup({ invitedBy }) {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
+
     Api(
       "/auth/register",
       {
@@ -148,7 +152,7 @@ export default function Signup({ invitedBy }) {
               </Form.Select>
             </InputGroup>
 
-            <button className="rounded-btn mt-3" type="submit">
+            <button className="topnav-btn mt-3" type="submit">
               Sign Up
             </button>
 

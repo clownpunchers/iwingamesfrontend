@@ -1,22 +1,26 @@
 import React from "react";
-import { Row } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import ShowGuide from "./modal";
 
-export default function PageTitle({ title }) {
+export default function PageTitle({ title, guide }) {
   return (
     <Row>
-      <div className="d-flex mt-1">
-        <h5 className="page-title">{title}</h5>
-        <ShowGuide
-          buttonClass="help-btn ms-auto"
-          className="help-modal"
-          buttonText="How to play"
-          modalTitle="How to play"
-          modalBody="some contents here..."
-          closeButtonLabel="Close"
-          understoodButtonLabel="Got it!"
-        />
-      </div>
+      <Col md={9} className="px-1">
+        <div className="d-flex mt-4">
+          <h5 className="page-title">{title}</h5>
+          {guide ? (
+            <ShowGuide
+              buttonClass="help-btn ms-auto"
+              className="help-modal"
+              buttonText="How to play ?"
+              modalTitle="How to play ?"
+              modalBody="some contents here..."
+              closeButtonLabel="Close"
+              understoodButtonLabel="Got it!"
+            />
+          ) : null}
+        </div>
+      </Col>
     </Row>
   );
 }
