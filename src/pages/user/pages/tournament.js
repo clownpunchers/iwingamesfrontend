@@ -38,9 +38,9 @@ const Tournament = () => {
     <>
       <PageTitle title={"Tournament"} guide={true} />
       <Row>
-        <Col md={9} sm={12}>
+        <Col lg={9} md={12}>
           <Pagenav setType={setType} />
-          <Row className="game-list">
+          <Row className="paginate-container">
             {loading ? (
               <h6 className="mt-2">Loading...</h6>
             ) : tours.length === 0 ? (
@@ -50,7 +50,7 @@ const Tournament = () => {
             )}
           </Row>
         </Col>
-        <Col md={3} sm={12}>
+        <Col lg={3} md={12}>
           <MenuBar />
         </Col>
       </Row>

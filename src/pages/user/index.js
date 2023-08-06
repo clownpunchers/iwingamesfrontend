@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
-
 import { getAuthenticatedUser } from "../../lib/auth_hook";
 import { useNavigate } from "react-router-dom";
 import { APP_ROUTES } from "../../utils/constants";
 import { UserContext } from "../../utils/contexts";
 
+import Layout from "../../layout/user";
 import Navbar from "../../components/topNav";
-import Sidebar from "../../components/linksBar.js";
-import Footer from "../../components/footer";
-import Layer from "../../components/layer.js";
-
 import Dashboard from "./pages/dashboard";
 import Practice from "./pages/practice";
 import Tournament from "./pages/tournament";
@@ -19,36 +15,41 @@ import Aboutus from "./pages/aboutus";
 import Contact from "./pages/contact";
 
 const User = ({ page }) => {
-  const naviagor = useNavigate();
-  const [userInfo, setUserInfo] = useState({});
+  const navigate = useNavigate();
+  const [authenticated, setAuthenticated] = useState(false);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     getAuthenticatedUser((res) => {
       const { authenticated, user } = res;
-      if (!authenticated) {
-        naviagor(APP_ROUTES.SIGN_IN);
-        return;
+      if (authenticated) {
+        setAuthenticated(authenticated);
+        setUser(user);
+      } else {
+        navigate(APP_ROUTES.SIGN_IN);
       }
-      setUserInfo(user);
     });
   }, []);
 
+  if (!authenticated) {
+    return null;
+  }
+
   return (
-    <UserContext.Provider value={userInfo}>
-      <Layer />
-      <Sidebar />
-      <Navbar page={"user"} />
-      <main>
-        {page === "Profile" && <Profile />}
-        {page === "Contact" && <Contact />}
-        {page === "Aboutus" && <Aboutus />}
-        {page === "Playgame" && <Playgame />}
-        {page === "Practice" && <Practice />}
-        {page === "Dashboard" && <Dashboard />}
-        {page === "Tournament" && <Tournament />}
-      </main>
-      <Footer />
-    </UserContext.Provider>
+    <Layout>
+      <UserContext.Provider value={user}>
+        <Navbar page={"user"} />
+        <main>
+          {page === "Profile" && <Profile />}
+          {page === "Contact" && <Contact />}
+          {page === "Aboutus" && <Aboutus />}
+          {page === "Playgame" && <Playgame />}
+          {page === "Practice" && <Practice />}
+          {page === "Dashboard" && <Dashboard />}
+          {page === "Tournament" && <Tournament />}
+        </main>
+      </UserContext.Provider>
+    </Layout>
   );
 };
 

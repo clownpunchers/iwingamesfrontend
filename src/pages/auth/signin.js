@@ -1,10 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { useGoogleLogin } from "@react-oauth/google";
-import { Api } from "../../utils/api";
 import { Row, Button } from "react-bootstrap";
+
+import { useGoogleLogin } from "@react-oauth/google";
+import FacebookLogin from "react-facebook-login";
+
+import { Api } from "../../utils/api";
 import { Notify } from "../../utils/notification";
 
 import Layout from "../../layout/auth";
@@ -16,7 +18,7 @@ export default function Signin() {
 
   const onSubmit = (data) => {
     Api("/auth/login", data, (res) => {
-      console.log(data)
+      console.log(data);
       const { success, accessToken } = res;
       if (success) {
         localStorage.setItem("iwin-token", accessToken);
@@ -29,19 +31,38 @@ export default function Signin() {
 
   const gLogin = useGoogleLogin({
     onSuccess: async (user) => {
-      Api("/auth/google-login",
-        { access_token: user.access_token },
-        (res) => {
-          const { success } = res;
-          if (success) {
-            navigate("/practice");
-          } else {
-            navigate("/signup");
-          }
+      Api("/auth/google-login", { access_token: user.access_token }, (res) => {
+        const { success } = res;
+        if (success) {
+          navigate("/practice");
+        } else {
+          navigate("/signup");
         }
-      );
+      });
     },
   });
+
+  const responseFacebook = (response) => {
+    console.log(response);
+    // // Login failed
+    // if (response.status === "unknown") {
+    //   alert("Login failed!");
+    //   setLogin(false);
+    //   return false;
+    // }
+    // setData(response);
+    // setPicture(response.picture.data.url);
+    // if (response.accessToken) {
+    //   setLogin(true);
+    // } else {
+    //   setLogin(false);
+    // }
+  };
+
+  const fLogin = (res) => {
+    console.log(res);
+  };
+
   return (
     <Layout>
       <div id="auth-page">
@@ -57,9 +78,17 @@ export default function Signin() {
               <Link className="col-sm-6 text-end pe-5" onClick={gLogin}>
                 <img src="../assets/img/icons/google.png" alt="google" />
               </Link>
-              <Link className="col-sm-6 text-start ps-5">
-                <img src="../assets/img/icons/facebook.png" alt="facebook" />
-              </Link>
+
+              {/* <FacebookLogin
+                appId="569720507786195"
+                autoLoad={false}
+                fields="name,email,picture"
+                scope="public_profile,email,user_friends"
+                callback={responseFacebook}
+                onClick={fLogin}
+                icon="fa-facebook"
+                className="col-sm-6 text-end pe-5"
+              /> */}
             </Row>
             <Divider />
             <Row

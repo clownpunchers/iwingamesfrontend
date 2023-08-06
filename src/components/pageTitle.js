@@ -6,7 +6,7 @@ export default function PageTitle({ title, guide }) {
   return (
     <Row>
       <Col md={9} className="px-1">
-        <div className="d-flex mt-4">
+        <div className="d-flex mt-3">
           <h5 className="page-title">{title}</h5>
           {guide ? (
             <ShowGuide

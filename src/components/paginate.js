@@ -26,7 +26,7 @@ function PaginatedItems({ items }) {
   return (
     <>
       {currentItems.map((ele, i) => (
-        <Col md={3} key={i} className="mb-3 px-0">
+        <Col lg={3} md={6} sm={12} key={i} className="mb-3 px-0">
           <div className="thumbnail">
             <Image
               src={`${API_URL}/images/${ele.image}`}
@@ -40,7 +40,7 @@ function PaginatedItems({ items }) {
               onClick={() => {
                 localStorage.setItem(
                   "selected_game",
-                  JSON.stringify({
+                  JSON.stringify({  
                     url: ele.url,
                     name: ele.name,
                   })
@@ -59,7 +59,7 @@ function PaginatedItems({ items }) {
         nextLabel={<i className="bi bi-chevron-double-right"></i>}
         onPageChange={handlePageClick}
         pageRangeDisplayed={5}
-        className="paginate"
+        className="paginate mb-0"
         pageCount={pageCount}
         previousLabel={<i className="bi bi-chevron-double-left"></i>}
         renderOnZeroPageCount={null}

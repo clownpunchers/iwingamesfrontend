@@ -120,115 +120,59 @@ export default function Referrals() {
           </ul>
         </Col>
         <Col md={7} sm={12} className="px-1">
-          <div className="table-responsive">
-            <Table>
-              <thead className="table-dark">
+          <Table id="dashboard-table">
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>Share</th>
+                <th>Expenditure</th>
+                <th>Ad Views</th>
+                <th>Income</th>
+                <th>Affiliates</th>
+              </tr>
+            </thead>
+            <tbody>
+              {loading ? (
                 <tr>
-                  <th>Player</th>
-                  <th>Share</th>
-                  <th>Expenditure</th>
-                  <th>Ad Views</th>
-                  <th>Income</th>
-                  <th>Affiliates</th>
+                  <td style={{ textAlign: "center" }} colSpan={5}>
+                    Loading...
+                  </td>
                 </tr>
-              </thead>
-              <tbody className="table-border-bottom-0">
-                {loading ? (
-                  <tr>
-                    <td style={{ textAlign: "center" }} colSpan={5}>
-                      Loading...
+              ) : players.length > 0 ? (
+                players.map((player, i) => (
+                  <tr key={i}>
+                    <td>
+                      <strong>{player.username}</strong>
+                    </td>
+                    <td>{getShare(player)}%</td>
+                    <td>${spent}</td>
+                    <td>
+                      {player.ads_impression} *{" "}
+                      <span className="small">$0.01</span>
+                    </td>
+                    <td>
+                      $
+                      {(spent * getShare(player)) / 100 +
+                        (player.ads_impression * 0.01 * getShare(player)) / 100}
+                    </td>
+                    <td>
+                      <ul className="list-group">
+                        <li className="list-group-item d-inline">{affiliate}</li>
+                        <li className="list-group-item d-inline">{sup_aff} </li>
+                        <li className="list-group-item d-inline">{sub_aff}</li>
+                      </ul>
                     </td>
                   </tr>
-                ) : players.length > 0 ? (
-                  players.map((player, i) => (
-                    <tr key={i}>
-                      <td>
-                        <strong>{player.username}</strong>
-                      </td>
-                      <td>{getShare(player)}%</td>
-                      <td>${spent}</td>
-                      <td>
-                        {player.clickCounts} *{" "}
-                        <span className="small">$0.01</span>
-                      </td>
-                      <td>
-                        $
-                        {(spent * getShare(player)) / 100 +
-                          (player.clickCounts * 0.01 * getShare(player)) / 100}
-                      </td>
-                      <td>
-                        <ul className="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                          {player.sub_aff ? (
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              className="avatar avatar-xs pull-up"
-                              title={
-                                player.sub_aff === username
-                                  ? "You"
-                                  : player.sub_aff
-                              }
-                            >
-                              <img
-                                src="../assets/img/avatars/avatar.jpg"
-                                alt="Avatar"
-                                className="rounded-circle"
-                              />
-                            </li>
-                          ) : null}
-                          {player.sup_aff ? (
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              className="avatar avatar-xs pull-up"
-                              title={
-                                player.sup_aff === username
-                                  ? "You"
-                                  : player.sup_aff
-                              }
-                            >
-                              <img
-                                src="../assets/img/avatars/avatar.jpg"
-                                alt="Avatar"
-                                className="rounded-circle"
-                              />
-                            </li>
-                          ) : null}
-                          {player.affiliate ? (
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              className="avatar avatar-xs pull-up"
-                              title={
-                                player.affiliate === username
-                                  ? "You"
-                                  : player.affiliate
-                              }
-                            >
-                              <img
-                                src="../assets/img/avatars/avatar.jpg"
-                                alt="Avatar"
-                                className="rounded-circle"
-                              />
-                            </li>
-                          ) : null}
-                        </ul>
-                      </td>
-                    </tr>
-                  ))
-                ) : (
-                  <tr>
-                    <td style={{ textAlign: "center" }} colSpan={6}>
-                      No User found
-                    </td>
-                  </tr>
-                )}
-              </tbody>
-            </Table>
-          </div>
+                ))
+              ) : (
+                <tr>
+                  <td style={{ textAlign: "center" }} colSpan={6}>
+                    No User found
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </Table>
         </Col>
         <Col md={3} sm={12}>
           <MenuBar />

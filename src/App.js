@@ -38,14 +38,13 @@ const App = () => {
           <Route
             exact
             path="/signup"
-            element={<Signup />}
+            element={<Signup invitedBy={false}  />}
           />
           <Route
             exact
             path="/invite/:id"
             element={<Signup invitedBy={true} />}
           />
-
           <Route exact
             path="/practice"
             element={<User page={"Practice"} />}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Api } from "../../../../utils/api";
 import { status } from "../../../../utils/maps.js";
-import Stages from "../../sections/stages.js";
+import Stages from "./stages.js";
 
 export default function AddTour({ show }) {
   const { register, handleSubmit } = useForm();

@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
   }, []);
 
   return (
-    <div id="admin-page">
+    <div id="admin-section">
       <Container fluid>
         <SideNavBar />
         <main>{children}</main>

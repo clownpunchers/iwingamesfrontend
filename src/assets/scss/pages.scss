@@ -179,15 +179,15 @@ $font_color: #fff;
 }
 
 #auth-page {
-  height: 78vh;
   display: flex;
   justify-content: center;
   align-items: center;
-
   .auth-form {
     border-radius: 17px;
     width: 500px;
     border: solid 1px $clr-a;
+    margin-top: 4%;
+    margin-bottom: 4%;
 
     .form-header {
       height: 75px;
@@ -436,11 +436,14 @@ $font_color: #fff;
 
     display: flex;
     align-items: center;
-    gap: 5px;
+    justify-content: space-between;
     span {
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
+    }
+    img {
+      margin-left: 10px;
     }
   }
   .sideinfo {

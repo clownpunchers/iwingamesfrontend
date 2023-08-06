@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Api } from "../../../utils/api";
-import { str_stage, str_prize } from "../../../utils/maps";
-import { refresh } from "../../../utils/api";
-import { Notify } from "../../../utils/notification";
+import { Api } from "../../../../utils/api";
+import { str_stage, str_prize } from "../../../../utils/maps";
+import { refresh } from "../../../../utils/api";
+import { Notify } from "../../../../utils/notification";
 import {
   Form,
   Button,

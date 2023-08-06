@@ -17,6 +17,7 @@
     "react-bootstrap": "^2.8.0",
     "react-bootstrap-icons": "^1.10.3",
     "react-dom": "^18.2.0",
+    "react-facebook-login": "^4.1.1",
     "react-hook-form": "^7.44.3",
     "react-notifications": "^1.7.4",
     "react-paginate": "^8.2.0",

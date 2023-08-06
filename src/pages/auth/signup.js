@@ -35,6 +35,7 @@ export default function Signup({ invitedBy }) {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
+    console.log(data);
 
     Api(
       "/auth/register",
@@ -121,7 +122,7 @@ export default function Signup({ invitedBy }) {
                 {...register("month", { required: true })}
               >
                 {months.map((month, index) => (
-                  <option key={index} value={index}>
+                  <option key={index} value={index + 1}>
                     {month}
                   </option>
                 ))}

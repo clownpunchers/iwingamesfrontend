@@ -4,18 +4,12 @@ import { Col, Row } from "react-bootstrap";
 
 const mapdata = [
   {
-    text: "Home",
-    type: "button",
-    link: "",
-  },
-
-  {
     text: "OUR PARTNERS",
     type: "button",
     link: "",
   },
   {
-    text: "Affiliates",
+    text: "AFFILIATES",
     type: "button",
     link: "",
   },
@@ -58,30 +52,26 @@ const mapdata = [
 
 function BottomNav() {
   return (
-    <Row>
-      <Col lg={12} className="">
-        <Navbar className="page-nav mb-1" expand="lg">
-          <Navbar.Toggle aria-controls="nav-3" />
-          <Navbar.Collapse id="nav-3">
-            <Nav className="me-auto">
-              {mapdata.map((ele, i) => (
-                <li
-                  className="nav-item"
-                  key={i}
-                  onClick={(e) => {
-                    const navItems = document.querySelectorAll(".nav-item");
-                    navItems.forEach((item) => item.classList.remove("active"));
-                    e.target.parentNode.classList.add("active");
-                  }}
-                >
-                  <Nav.Link href={ele.link}>{ele.text}</Nav.Link>
-                </li>
-              ))}
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-      </Col>
-    </Row>
+    <Navbar className="page-nav mb-1" expand="lg">
+      <Navbar.Toggle aria-controls="nav-3" />
+      <Navbar.Collapse id="nav-3">
+        <Nav className="me-auto">
+          {mapdata.map((ele, i) => (
+            <li
+              className="nav-item"
+              key={i}
+              onClick={(e) => {
+                const navItems = document.querySelectorAll(".nav-item");
+                navItems.forEach((item) => item.classList.remove("active"));
+                e.target.parentNode.classList.add("active");
+              }}
+            >
+              <Nav.Link href={ele.link}>{ele.text}</Nav.Link>
+            </li>
+          ))}
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
 

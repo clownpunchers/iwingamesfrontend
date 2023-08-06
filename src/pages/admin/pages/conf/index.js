@@ -1,5 +1,5 @@
 import React from "react";
-import AffConf from "../../sections/aff_cog";
+import AffConf from "./aff_cog";
 
 export default function Conf() {
   return (

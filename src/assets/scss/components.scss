@@ -130,7 +130,7 @@ $font_color: #fff;
   }
 
   .list-group {
-    height: 38vh;
+    height: 40vh;
     overflow: auto;
     border-radius: 0px;
 
@@ -146,18 +146,21 @@ $font_color: #fff;
   }
 }
 
-.game-list {
+.paginate-container {
   position: relative;
-  text-align: center;
 
   .paginate {
+    width: 100%;
+    text-align: right;
     li {
       padding: 0px 10px;
-      display: inline-block;
+      display: none;
     }
 
     .next,
     .previous {
+      display: inline-block !important;
+
       i {
         font-size: 20px;
         color: $clr-a;
@@ -326,6 +329,37 @@ $font_color: #fff;
     i {
       font-size: 20px;
       color: #fff;
+    }
+  }
+}
+
+#dashboard-table {
+  thead {
+    tr {
+      border-bottom: solid 15px #0000;
+      th {
+        height: 42px;
+        color: #fff;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.09) !important;
+        font-family: 'Montserrat';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        font-variant: small-caps;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        color: white;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.09);
+        backdrop-filter: blur(8.5px);
+        border: none !important;
+      }
     }
   }
 }

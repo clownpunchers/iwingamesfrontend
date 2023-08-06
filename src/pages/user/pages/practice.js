@@ -39,9 +39,9 @@ const Practice = () => {
     <>
       <PageTitle title={"practice"} guide={true} />
       <Row>
-        <Col md={9} sm={12}>
+        <Col lg={9} md={12}>
           <Pagenav setType={setType} page={"practice"} />
-          <Row className="game-list">
+          <Row className="paginate-container">
             {loading ? (
               <h6 className="mt-2">Loading...</h6>
             ) : games.length === 0 ? (
@@ -51,7 +51,7 @@ const Practice = () => {
             )}
           </Row>
         </Col>
-        <Col md={3} sm={12}>
+        <Col lg={3} md={12}>
           <MenuBar />
         </Col>
       </Row>
