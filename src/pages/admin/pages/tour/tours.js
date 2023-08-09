@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import StatusBtn from "../../../../components/statusBtn";
-import ActionBtns from "../../../../components/actionBtn";
+import Status_btn from "../../components/status_btn";
+import Action_btn from "../../components/action_btn";
 import { Api } from "../../../../utils/api";
 
 export default function Tour({ show }) {
@@ -60,14 +60,14 @@ export default function Tour({ show }) {
                     <td>{tour.title}</td>
                     <td>{tour.game}</td>
                     <td>
-                      <StatusBtn
+                      <Status_btn
                         status={tour.status}
                         table={table}
                         id={tour.id}
                       />
                     </td>
                     <td>
-                      <ActionBtns id={tour.id} table={table} row={i} />
+                      <Action_btn id={tour.id} table={table} row={i} />
                     </td>
                   </tr>
                 ))

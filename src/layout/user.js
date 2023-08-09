@@ -1,7 +1,7 @@
 import React from "react";
-import LinksBar from "../components/linksBar";
-import Footer from "../components/footer";
-import Layer from "../components/layer.js";
+import LinksBar from "./components/links_bar";
+import Layer from "./components/bg_layer.js";
+import Footer from "./components/footer";
 
 const Layout = ({ children }) => {
   return (

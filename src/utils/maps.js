@@ -1,7 +1,7 @@
-const adminSideBarMenu = [
+const sidebar_menu = [
   {
     title: "Dashboard",
-    link: "dashboard",
+    link: "",
     icon: <i className="bi bi-speedometer"></i>,
   },
   {
@@ -36,7 +36,7 @@ const adminSideBarMenu = [
   },
 ];
 
-const str_stage = [
+const stage_menu = [
   {
     name: "countdown",
     label: "Countdown",
@@ -81,7 +81,7 @@ const status = [
   { label: "Inactive", value: 0 },
 ];
 
-const str_prize = [
+const prize_menu = [
   { place: 1, advance: false, prizeType: "", value: "" },
   { place: 2, advance: false, prizeType: "", value: "" },
   { place: 3, advance: false, prizeType: "", value: "" },
@@ -94,7 +94,7 @@ const str_prize = [
   { place: 10, advance: false, prizeType: "", value: "" },
 ];
 
-const profile_fields = [
+const profile_menu = [
   {
     index: "firstname",
     title: "First Name",
@@ -127,4 +127,4 @@ const profile_fields = [
   },
 ];
 
-export { adminSideBarMenu, str_stage, status, str_prize, profile_fields };
+export { sidebar_menu, stage_menu, status, prize_menu, profile_menu };

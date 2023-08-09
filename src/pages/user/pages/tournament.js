@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { Api } from "../../../utils/api";
 
-import Pagenav from "../../../components/filterNav";
-import BottomNav from "../../../components/bottomNav";
-import MenuBar from "../../../components/menubar";
-import PaginatedItems from "../../../components/paginate";
-import PageTitle from "../../../components/pageTitle";
+import Pagenav from "../components/filter_nav";
+import BottomNav from "../components/bottom_nav";
+import MenuBar from "../components/menu_bar";
+import PaginatedItems from "../components/paginate";
+import PageTitle from "../components/page_title";
 
 const Tournament = () => {
   const [loading, setLoading] = useState(true);
@@ -50,7 +50,7 @@ const Tournament = () => {
             )}
           </Row>
         </Col>
-        <Col lg={3} md={12}>
+        <Col lg={3} md={12} className="px-1">
           <MenuBar />
         </Col>
       </Row>

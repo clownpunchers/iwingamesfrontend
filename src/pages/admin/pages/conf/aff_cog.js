@@ -75,7 +75,7 @@ function AffConf() {
           <h5 className="card-header">Affiliate Revenue Config</h5>
           <div className="card-body">
             {inputs.map((field, i) => (
-              <div className="mb-3 row">
+              <div className="mb-3 row" key={i}>
                 <label className="col-md-6 col-form-label">{field.label}</label>
                 <div className="col-md-6">
                   <input

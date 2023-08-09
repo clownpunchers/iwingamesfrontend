@@ -23,47 +23,42 @@ function Contact() {
 
   return (
     <>
-      <div id="auth-page">
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="text-center auth-form"
-        >
-          <div className="form-header">
-            <h4 className="form-title">Contact Us</h4>
-          </div>
+      <form onSubmit={handleSubmit(onSubmit)} className="text-center auth-form">
+        <div className="form-header">
+          <h4 className="form-title">Contact Us</h4>
+        </div>
 
-          <div className="form-body p-5 text-center ">
-            <InputGroup className="">
-              <Form.Control
-                type="email"
-                className="rounded-0"
-                aria-label="email"
-                placeholder="Email"
-                {...register("email", { required: true })}
-              />
-            </InputGroup>
-            <InputGroup className="mt-3">
-              <Form.Control
-                type="title"
-                className="rounded-0"
-                aria-label="title"
-                placeholder="Title"
-                {...register("title", { required: true })}
-              />
-            </InputGroup>
-
-            <textarea
-              className="mt-3 w-100"
-              rows={5}
-              placeholder="Write subscribe"
-              {...register("context", { required: true })}
+        <div className="form-body p-5 text-center ">
+          <InputGroup className="">
+            <Form.Control
+              type="email"
+              className="rounded-0"
+              aria-label="email"
+              placeholder="Email"
+              {...register("email", { required: true })}
             />
-            <button className="topnav-btn mt-3" type="submit">
-              Submit Now
-            </button>
-          </div>
-        </form>
-      </div>
+          </InputGroup>
+          <InputGroup className="mt-3">
+            <Form.Control
+              type="title"
+              className="rounded-0"
+              aria-label="title"
+              placeholder="Title"
+              {...register("title", { required: true })}
+            />
+          </InputGroup>
+
+          <textarea
+            className="mt-3 w-100"
+            rows={5}
+            placeholder="Write subscribe"
+            {...register("context", { required: true })}
+          />
+          <button className="rounded-btn mt-3" type="submit">
+            Submit Now
+          </button>
+        </div>
+      </form>
     </>
   );
 }

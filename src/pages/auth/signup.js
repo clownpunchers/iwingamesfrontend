@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 import { Api } from "../../utils/api";
 import { Row } from "react-bootstrap";
 import Layout from "../../layout/auth";
+import Navbar from "./components/navbar";
+
 
 const months = [
   "January",
@@ -54,13 +56,11 @@ export default function Signup({ invitedBy }) {
 
   return (
     <Layout>
-      <div id="auth-page">
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="text-center auth-form"
-        >
+      <Navbar page={"auth"} />
+      <main>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-header">
-            <h4 className="form-title">Don’t Have an account yet?</h4>
+            <h4 className="form-title">Don't Have an account yet?</h4>
           </div>
 
           <div className="form-body px-3 pt-3">
@@ -153,7 +153,7 @@ export default function Signup({ invitedBy }) {
               </Form.Select>
             </InputGroup>
 
-            <button className="topnav-btn mt-3" type="submit">
+            <button className="rounded-btn mt-3" type="submit">
               Sign Up
             </button>
 
@@ -165,7 +165,7 @@ export default function Signup({ invitedBy }) {
             </Row>
           </div>
         </form>
-      </div>
+      </main>
     </Layout>
   );
 }

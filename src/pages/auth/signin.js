@@ -1,21 +1,17 @@
 import React from "react";
+import FacebookLogin from "react-facebook-login";
+import { useGoogleLogin } from "@react-oauth/google";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { Row, Button } from "react-bootstrap";
-
-import { useGoogleLogin } from "@react-oauth/google";
-import FacebookLogin from "react-facebook-login";
-
+import { Row, Col, Button } from "react-bootstrap";
 import { Api } from "../../utils/api";
 import { Notify } from "../../utils/notification";
-
 import Layout from "../../layout/auth";
-import Divider from "../../components/divider";
+import Navbar from "./components/navbar";
 
 export default function Signin() {
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
-
   const onSubmit = (data) => {
     Api("/auth/login", data, (res) => {
       console.log(data);
@@ -65,32 +61,45 @@ export default function Signin() {
 
   return (
     <Layout>
-      <div id="auth-page">
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="text-center auth-form"
-        >
+      <Navbar page={"auth"} />
+      <main>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-header">
             <h4 className="form-title">Log in with</h4>
           </div>
           <div className="form-body">
             <Row className="pb-3 pt-3">
-              <Link className="col-sm-6 text-end pe-5" onClick={gLogin}>
-                <img src="../assets/img/icons/google.png" alt="google" />
-              </Link>
-
-              {/* <FacebookLogin
-                appId="569720507786195"
-                autoLoad={false}
-                fields="name,email,picture"
-                scope="public_profile,email,user_friends"
-                callback={responseFacebook}
-                onClick={fLogin}
-                icon="fa-facebook"
-                className="col-sm-6 text-end pe-5"
-              /> */}
+              <Col>
+                <Link onClick={gLogin}>
+                  <img src="../assets/img/icons/google.png" alt="google" />
+                </Link>
+              </Col>
+              <Col>
+                <FacebookLogin
+                  appId="569720507786195"
+                  autoLoad={false}
+                  fields="name,email,picture"
+                  scope="public_profile,email,user_friends"
+                  callback={responseFacebook}
+                  onClick={fLogin}
+                  icon="fa-facebook"
+                  textButton=""
+                  size="small"
+                  buttonStyle={{
+                    borderRadius: "50%",
+                    display: "inline-block",
+                    background: "#0778e9",
+                    height: "40px",
+                    width: "40px",
+                  }}
+                />
+              </Col>
             </Row>
-            <Divider />
+            <div className="divider">
+              <hr className="left"></hr>
+              <span className="texture">OR</span>
+              <hr className="right"></hr>
+            </div>
             <Row
               className="px-5"
               style={{ display: "flex", justifyContent: "center" }}
@@ -108,7 +117,7 @@ export default function Signin() {
                 {...register("password", { required: true })}
               />
               <Button
-                className="topnav-btn mt-3"
+                className="rounded-btn mt-3"
                 variant="danger"
                 type="submit"
               >
@@ -125,7 +134,7 @@ export default function Signin() {
             </Row>
           </div>
         </form>
-      </div>
+      </main>
     </Layout>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import ActionBtn from "../../../../components/actionBtn";
-import StatusBtn from "../../../../components/statusBtn";
+import ActionBtn from "../../components/action_btn";
+import status_btn from "../../components/status_btn";
 import { Api } from "../../../../utils/api";
 import { API_URL } from "../../../../utils/constants";
 
@@ -76,7 +76,7 @@ export default function Prizes({ show }) {
                     <td>{prize.summary}</td>
                     <td>{new Date(prize.expire).toLocaleDateString()}</td>
                     <td>
-                      <StatusBtn
+                      <status_btn
                         status={prize.status}
                         table={table}
                         id={prize.id}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Api } from "../../../../utils/api";
-import { str_stage, str_prize } from "../../../../utils/maps";
+import { stage_menu, prize_menu } from "../../../../utils/maps";
 import { refresh } from "../../../../utils/api";
 import { Notify } from "../../../../utils/notification";
 import {
@@ -18,7 +18,7 @@ import {
 export default function Stages({ tourInfo }) {
   const { register, handleSubmit } = useForm();
   const [no, setNo] = useState(1);
-  const [prizes, setPrizes] = useState(str_prize);
+  const [prizes, setPrizes] = useState(prize_menu);
   const [rewards, setRewards] = useState([]);
   const [stageIds, setStageIds] = useState([]);
 
@@ -68,7 +68,7 @@ export default function Stages({ tourInfo }) {
       if (success) {
         Notify("success", "New stage have been created");
         setStageIds([...stageIds, insertId]);
-        setPrizes(str_prize);
+        setPrizes(prize_menu);
         refresh();
       }
     });
@@ -92,7 +92,7 @@ export default function Stages({ tourInfo }) {
         <Row>
           <Col md={4}>
             <h5 className="card-header">Stage: {no}</h5>
-            {str_stage.map((ele, j) => (
+            {stage_menu.map((ele, j) => (
               <Form.Group key={j} className="mt-3">
                 <Form.Label>{ele.label}</Form.Label>
                 <Form.Control

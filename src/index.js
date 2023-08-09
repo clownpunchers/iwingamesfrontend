@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
 import App from "./App";
-import rootReducer from "./reducers/rootReducer";
+import rootReducer from "./reducers/_index";
 
 const store = configureStore({
   reducer: rootReducer,

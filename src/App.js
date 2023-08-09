@@ -18,84 +18,45 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "popper.js";
 import "jquery";
 
-import "./App.scss";
+import "./assets/scss/_global.scss";
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route
-            exact
-            path="/"
-            element={<Signin />}
-          />
-          <Route
-            exact
-            path="/signin"
-            element={<Signin />}
-          />
-          <Route
-            exact
-            path="/signup"
-            element={<Signup invitedBy={false}  />}
-          />
+          {/* AUTU ROUTES */}
+          <Route exact path="/" element={<Signin />} />
+          <Route exact path="/signin" element={<Signin />} />
+          <Route exact path="/signup" element={<Signup invitedBy={false} />} />
           <Route
             exact
             path="/invite/:id"
             element={<Signup invitedBy={true} />}
           />
-          <Route exact
-            path="/practice"
-            element={<User page={"Practice"} />}
-          />
+
+          {/* USER ROUTES */}
+          <Route exact path="/practice" element={<User page={"Practice"} />} />
           <Route
             exact
             path="/tournament"
             element={<User page={"Tournament"} />}
           />
-          <Route
-            exact
-            path="/gameplay"
-            element={<User page={"Playgame"} />}
-          />
-          <Route
-            exact
-            path="/profile"
-            element={<User page={"Profile"} />}
-          />
+          <Route exact path="/gameplay" element={<User page={"Playgame"} />} />
+          <Route exact path="/profile" element={<User page={"Profile"} />} />
           <Route
             exact
             path="/dashboard"
             element={<User page={"Dashboard"} />}
           />
-          <Route
-            exact
-            path="/contact"
-            element={<User page={"Contact"} />}
-          />
-          <Route
-            exact
-            path="/aboutus"
-            element={<User page={"Aboutus"} />}
-          />
+          <Route exact path="/contact" element={<User page={"Contact"} />} />
+          <Route exact path="/aboutus" element={<User page={"Aboutus"} />} />
 
-          <Route
-            exact
-            path="/admin"
-            element={<Admin page={"Aboutus"} />}
-          />
+          {/* ADMIN ROUTES */}
+          <Route exact path="/admin" element={<Admin />} />
 
-          <Route
-            exact
-            path="/error"
-            element={<Error />}
-          />
-          <Route
-            exact
-            path="*" element={<Notfound />}
-          />
-
+          <Route exact path="/error" element={<Error />} />
+          <Route exact path="*" element={<Notfound />} />
         </Routes>
       </BrowserRouter>
       <NotificationContainer />

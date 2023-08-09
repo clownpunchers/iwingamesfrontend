@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import StatusBtn from "../../../../components/statusBtn";
-import ActionBtns from "../../../../components/actionBtn";
+import Status_btn from "../../components/status_btn";
+import Action_btn from "../../components/action_btn";
 import { Api } from "../../../../utils/api";
 import { API_URL } from "../../../../utils/constants";
 
@@ -76,14 +76,14 @@ export default function Games({ show }) {
                     </td>
                     <td>{game.filename}</td>
                     <td>
-                      <StatusBtn
+                      <Status_btn
                         status={game.status}
                         table={table}
                         id={game.id}
                       />
                     </td>
                     <td>
-                      <ActionBtns id={game.id} table={table} row={i} />
+                      <Action_btn id={game.id} table={table} row={i} />
                     </td>
                   </tr>
                 ))

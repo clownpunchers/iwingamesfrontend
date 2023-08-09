@@ -1,0 +1,163 @@
+@import "variables";
+
+#auth-section {
+  .navbar {
+    position: relative;
+    background-color: $clr-n;
+    padding: 0px !important;
+    box-shadow: 0px 4px 36px 0px rgba(158, 25, 199, 0.32);
+
+    .nav-item {
+      padding: 0px 7px;
+      i {
+        font-size: 20px !important;
+      }
+    }
+
+    .navbar-avatar {
+      width: 36px;
+      height: 36px;
+      margin-left: 11px;
+      border-radius: 36px;
+      box-shadow: 0px 2px 13px 0px rgba(217, 0, 255, 0.47);
+    }
+
+    .dropdown {
+      .btn {
+        background: transparent !important;
+        border: none;
+        color: $white;
+        text-align: center;
+        font-family: Lato;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: lowercase;
+        span {
+          color: #d900ff;
+          font-family: Lato;
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+
+        &::after {
+          content: none !important;
+        }
+      }
+
+      .dropdown-menu {
+        background-color: $clr-n;
+        border-radius: 0 !important;
+
+        .dropdown-item {
+          padding: 10px;
+
+          &:hover {
+            background-color: $clr-a;
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    position: relative;
+    margin-left: $w_linksbar + 20px;
+    margin-right: $w_linksbar + 20px;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    form {
+      width: 500px;
+      border-radius: 17px;
+      border: solid 1px $clr-a;
+      text-align: center;
+
+      .form-header {
+        height: 75px;
+        border-top-left-radius: 17px;
+        border-top-right-radius: 17px;
+        background: linear-gradient(45deg, #44035b, #340358);
+        padding-top: 25px;
+
+        .form-title {
+          color: $white;
+          text-align: center;
+          font-family: Montserrat;
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+      }
+
+      .divider {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .left {
+          width: 50%;
+          color: $clr-a;
+          height: 2px;
+        }
+
+        .texture {
+          color: $white;
+          text-align: center;
+          font-family: Montserrat;
+          margin: 0px 10px;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+
+        .right {
+          width: 50%;
+          color: $clr-a;
+          height: 2px;
+        }
+      }
+
+      input {
+        background-color: #381e48;
+        border: none;
+        height: 35px;
+        font-size: 16px;
+        font-weight: 400;
+        font-style: normal;
+        line-height: normal;
+      }
+    }
+
+    .form-body {
+      background-color: #1e032e;
+      border-bottom-left-radius: 17px;
+      border-bottom-right-radius: 17px;
+    }
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: $h_footer;
+    padding: 4px $w_linksbar + 12px;
+    border-top: 1px solid #695872;
+    img,
+    iframe {
+      width: 100%;
+      height: 72px;
+    }
+  }
+}

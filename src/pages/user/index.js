@@ -5,13 +5,13 @@ import { APP_ROUTES } from "../../utils/constants";
 import { UserContext } from "../../utils/contexts";
 
 import Layout from "../../layout/user";
-import Navbar from "../../components/topNav";
+import Navbar from "./components/navbar";
 import Dashboard from "./pages/dashboard";
 import Practice from "./pages/practice";
 import Tournament from "./pages/tournament";
-import Profile from "./pages/profile";
-import Playgame from "./pages/playgame";
-import Aboutus from "./pages/aboutus";
+import Profile from "./pages/profile/index";
+import Playgame from "./pages/game";
+import Aboutus from "./pages/about";
 import Contact from "./pages/contact";
 
 const User = ({ page }) => {

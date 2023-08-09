@@ -4,8 +4,10 @@ import { UserContext } from "../../../utils/contexts";
 import { API_URL } from "../../../utils/constants";
 import { Notify } from "../../../utils/notification";
 import { Api } from "../../../utils/api";
-import PageTitle from "../../../components/pageTitle";
-import MenuBar from "../../../components/menubar";
+
+import PageTitle from "../components/page_title";
+import MenuBar from "../components/menu_bar";
+import BottomNav from "../components/bottom_nav";
 
 export default function Referrals() {
   const { username, aff_link, affiliate, sup_aff, sub_aff, avatar } =
@@ -66,7 +68,7 @@ export default function Referrals() {
   return (
     <div id="dashboard-page">
       <PageTitle title={`${username}'s Dashboard`} guide={true} />
-      <Row className="mb-4">
+      <Row>
         <Col md={2} sm={12} className="px-1">
           <div className="avatar-container">
             <img
@@ -119,7 +121,7 @@ export default function Referrals() {
             </li>
           </ul>
         </Col>
-        <Col md={7} sm={12} className="px-1">
+        <Col md={7} sm={12}>
           <Table id="dashboard-table">
             <thead>
               <tr>
@@ -157,7 +159,9 @@ export default function Referrals() {
                     </td>
                     <td>
                       <ul className="list-group">
-                        <li className="list-group-item d-inline">{affiliate}</li>
+                        <li className="list-group-item d-inline">
+                          {affiliate}
+                        </li>
                         <li className="list-group-item d-inline">{sup_aff} </li>
                         <li className="list-group-item d-inline">{sub_aff}</li>
                       </ul>
@@ -174,10 +178,11 @@ export default function Referrals() {
             </tbody>
           </Table>
         </Col>
-        <Col md={3} sm={12}>
+        <Col lg={3} md={12} className="px-1">
           <MenuBar />
         </Col>
       </Row>
+      <BottomNav />
     </div>
   );
 }

@@ -1,0 +1,14 @@
+@import "variables";
+
+#admin-section {
+  nav {
+    background-color: $clr-n;
+  }
+
+  main {
+    margin-left: 240px;
+    .page-content {
+      padding: 10px;
+    }
+  }
+}
